@@ -2,6 +2,7 @@ package com.ratelimiter.core;
 
 import com.ratelimiter.annotation.RateLimited;
 import com.ratelimiter.config.RateLimiterConfig.MethodConfig;
+import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -11,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
+
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
