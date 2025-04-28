@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -30,6 +31,13 @@ public class RateLimitingAspect {
         this.messageBuffer = messageBuffer;
         this.methodConfigs = methodConfigs;
     }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("=== RATE LIMITING ASPECT INITIALIZED ===");
+        log.info("Rate Limiting Aspect initialized successfully");
+    }
+
 
     /**
      * Intercept methods annotated with @RateLimited
